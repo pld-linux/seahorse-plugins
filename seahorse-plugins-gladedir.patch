@@ -1,0 +1,11 @@
+diff -aurN seahorse-plugins-2.24.0.orig/plugins/applet/Makefile.am seahorse-plugins-2.24.0/plugins/applet/Makefile.am
+--- seahorse-plugins-2.24.0.orig/plugins/applet/Makefile.am	2008-10-03 11:19:33.000000000 +0200
++++ seahorse-plugins-2.24.0/plugins/applet/Makefile.am	2008-10-03 11:20:02.000000000 +0200
+@@ -1,6 +1,6 @@
+ 
+ uidir = $(datadir)/gnome-2.0/ui
+-gladedir = $(datadir)/seahorse/glade/
++gladedir = $(datadir)/seahorse-plugins/glade/
+ localedir = $(datadir)/locale
+ 
+ SUBDIRS = docs
