@@ -7,6 +7,8 @@ Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.24/%{name}-%{version}.tar.bz2
 # Source0-md5:	b2678f84f3aa45165530e4e9420ee231
 Patch0:		%{name}-libxul.patch
+# http://bugzilla.gnome.org/show_bug.cgi?id=554823
+Patch1:		%{name}-gladedir.patch
 URL:		http://www.gnome.org/projects/seahorse/
 BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.52
@@ -102,6 +104,7 @@ Aplet Seahorse.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__intltoolize}
@@ -197,7 +200,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/seahorse/seahorse-applet
 %{_libdir}/bonobo/servers/GNOME_SeahorseApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_SeahorseApplet.xml
-%{_datadir}/seahorse/glade/seahorse-applet-preferences.glade
+%{_datadir}/seahorse-plugins/glade/seahorse-applet-preferences.glade
 %{_iconsdir}/hicolor/*/*/seahorse-applet*
 %{_pixmapsdir}/seahorse-plugins/*/seahorse-applet*
 %{_pixmapsdir}/seahorse-applet.svg
