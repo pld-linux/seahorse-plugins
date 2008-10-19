@@ -1,14 +1,12 @@
 Summary:	Plugins and utilities for encryption in GNOME
 Name:		seahorse-plugins
-Version:	2.24.0
+Version:	2.24.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	b2678f84f3aa45165530e4e9420ee231
+# Source0-md5:	842b7b7424c2a5cfe56db5960133f0a1
 Patch0:		%{name}-libxul.patch
-# http://bugzilla.gnome.org/show_bug.cgi?id=554823
-Patch1:		%{name}-gladedir.patch
 URL:		http://www.gnome.org/projects/seahorse/
 BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.52
@@ -104,7 +102,6 @@ Aplet Seahorse.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__intltoolize}
