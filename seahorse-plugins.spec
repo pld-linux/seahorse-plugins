@@ -1,42 +1,42 @@
 Summary:	Plugins and utilities for encryption in GNOME
 Name:		seahorse-plugins
-Version:	2.24.1
+Version:	2.26.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	842b7b7424c2a5cfe56db5960133f0a1
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.26/%{name}-%{version}.tar.bz2
+# Source0-md5:	8936feb29cf9e4b935d1059ee4e416c6
 Patch0:		%{name}-libxul.patch
 URL:		http://www.gnome.org/projects/seahorse/
 BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.71
-BuildRequires:	epiphany-devel >= 2.24.0
-BuildRequires:	evolution-data-server-devel >= 2.24.0
+BuildRequires:	epiphany-devel >= 2.26.0
+BuildRequires:	evolution-data-server-devel >= 2.26.0
 BuildRequires:	gedit2-devel >= 2.24.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-doc-utils >= 0.14.0
-BuildRequires:	gnome-keyring-devel >= 2.24.0
-BuildRequires:	gnome-panel-devel >= 2.24.0
+BuildRequires:	gnome-keyring-devel >= 2.26.0
+BuildRequires:	gnome-panel-devel >= 2.26.0
 BuildRequires:	gnome-vfs2-devel >= 2.24.0
 BuildRequires:	gnupg >= 1.4.5
 BuildRequires:	gpgme-devel >= 1:1.1.2
 BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libcryptui-devel >= 2.24.0
+BuildRequires:	libcryptui-devel >= 2.26.0
 BuildRequires:	libglade2-devel >= 1:2.6.2
 BuildRequires:	libnotify-devel >= 0.4.2
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
-BuildRequires:	nautilus-devel >= 2.24.0
+BuildRequires:	nautilus-devel >= 2.26.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xulrunner-devel >= 1.9-5
 Requires(post,postun):	desktop-file-utils
 Requires(post,preun):	GConf2
-Requires:	seahorse >= 2.24.0
+Requires:	seahorse >= 2.26.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,7 +49,7 @@ Summary:	Seahorse extension for Epiphany
 Summary(pl.UTF-8):	Rozszerzenie Seahorse dla Epiphany
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
-Requires:	epiphany >= 2.24.0
+Requires:	epiphany >= 2.26.0
 
 %description -n epiphany-extension-seahorse
 Extension for encrypting text fields.
@@ -63,7 +63,7 @@ Summary(pl.UTF-8):	Wtyczka Seahorse dla Gedit
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{version}-%{release}
-Requires:	gedit2 >= 2.24.0
+Requires:	gedit2 >= 2.26.0
 
 %description -n gedit-plugin-seahorse
 This plugin performs encryption operations on text.
@@ -77,7 +77,7 @@ Summary(pl.UTF-8):	Rozszerzenie Seahorse dla Nautilusa
 Group:		X11/Applications
 Requires(post,postun):	shared-mime-info
 Requires:	%{name} = %{version}-%{release}
-Requires:	nautilus >= 2.24.0
+Requires:	nautilus >= 2.26.0
 
 %description -n nautilus-extension-seahorse
 Extension for signing and encrypting files.
@@ -91,7 +91,7 @@ Summary(pl.UTF-8):	Aplet Seahorse
 Group:		X11/Applications
 Requires(post,postun):	gtk+2
 Requires:	%{name} = %{version}-%{release}
-Requires:	gnome-panel >= 2.24.0
+Requires:	gnome-panel >= 2.26.0
 
 %description -n gnome-applet-seahorse
 Seahorse applet.
