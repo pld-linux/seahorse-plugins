@@ -1,11 +1,11 @@
 Summary:	Plugins and utilities for encryption in GNOME
 Name:		seahorse-plugins
-Version:	2.26.0
+Version:	2.26.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	8936feb29cf9e4b935d1059ee4e416c6
+# Source0-md5:	d0aecc4e8e008b45362adf8a8716f38c
 Patch0:		%{name}-libxul.patch
 URL:		http://www.gnome.org/projects/seahorse/
 BuildRequires:	GConf2-devel >= 2.24.0
