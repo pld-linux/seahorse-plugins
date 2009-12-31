@@ -1,30 +1,27 @@
 Summary:	Plugins and utilities for encryption in GNOME
 Name:		seahorse-plugins
-Version:	2.26.1
+Version:	2.28.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	d0aecc4e8e008b45362adf8a8716f38c
-Patch0:		%{name}-libxul.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.28/%{name}-%{version}.tar.bz2
+# Source0-md5:	cec5ef8b94c16798f53a5876d3718b91
 URL:		http://www.gnome.org/projects/seahorse/
 BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.71
-BuildRequires:	epiphany-devel >= 2.26.0
 BuildRequires:	evolution-data-server-devel >= 2.26.0
 BuildRequires:	gedit2-devel >= 2.24.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gnome-keyring-devel >= 2.26.0
 BuildRequires:	gnome-panel-devel >= 2.26.0
-BuildRequires:	gnome-vfs2-devel >= 2.24.0
 BuildRequires:	gnupg >= 1.4.5
 BuildRequires:	gpgme-devel >= 1:1.1.2
 BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libcryptui-devel >= 2.26.0
+BuildRequires:	libcryptui-devel >= 2.28.0
 BuildRequires:	libglade2-devel >= 1:2.6.2
 BuildRequires:	libnotify-devel >= 0.4.2
 BuildRequires:	libtool
@@ -33,29 +30,16 @@ BuildRequires:	nautilus-devel >= 2.26.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
-BuildRequires:	xulrunner-devel >= 1.9-5
 Requires(post,postun):	desktop-file-utils
 Requires(post,preun):	GConf2
-Requires:	seahorse >= 2.26.0
+Requires:	seahorse >= 2.28.0
+Obsoletes:	epiphany-extension-seahorse
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The plugins and utilities in this package integrate seahorse into the
 GNOME desktop environment and allow users to perform operations from
 applications like nautilus or gedit.
-
-%package -n epiphany-extension-seahorse
-Summary:	Seahorse extension for Epiphany
-Summary(pl.UTF-8):	Rozszerzenie Seahorse dla Epiphany
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-Requires:	epiphany >= 2.26.0
-
-%description -n epiphany-extension-seahorse
-Extension for encrypting text fields.
-
-%description -n epiphany-extension-seahorse -l pl.UTF-8
-Rozszerzenie do szyfrowania pól tekstowych.
 
 %package -n gedit-plugin-seahorse
 Summary:	Seahorse plugin for Gedit
@@ -101,7 +85,6 @@ Aplet Seahorse.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__intltoolize}
@@ -112,7 +95,8 @@ Aplet Seahorse.
 %{__automake}
 %configure \
 	--disable-update-mime-database \
-	--disable-schemas-install
+	--disable-schemas-install \
+	--disable-epiphany
 %{__make}
 
 %install
@@ -175,11 +159,6 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{_pixmapsdir}/seahorse-plugins/*/seahorse-applet*
 %{_mandir}/man1/seahorse-agent.1*
 %{_mandir}/man1/seahorse-tool.1*
-
-%files -n epiphany-extension-seahorse
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/epiphany/2.*/extensions/libseahorseextension.so
-%{_libdir}/epiphany/2.*/extensions/seahorse.ephy-extension
 
 %files -n gedit-plugin-seahorse
 %defattr(644,root,root,755)
