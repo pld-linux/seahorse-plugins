@@ -81,7 +81,7 @@ Requires:	gnome-panel >= 2.26.0
 Applet for signing and encrypting files.
 
 %description -n gnome-applet-seahorse -l pl.UTF-8
-Aplet Seahorse.
+Aplet do podpisywania i kodowania plików.
 
 %prep
 %setup -q
