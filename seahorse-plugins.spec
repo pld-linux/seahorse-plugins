@@ -1,4 +1,5 @@
 Summary:	Plugins and utilities for encryption in GNOME
+Summary(pl.UTF-8):	Wtyczki i narzędzia do szyfrowania w GNOME
 Name:		seahorse-plugins
 Version:	2.28.1
 Release:	1
@@ -37,9 +38,14 @@ Obsoletes:	epiphany-extension-seahorse
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The plugins and utilities in this package integrate seahorse into the
+The plugins and utilities in this package integrate Seahorse into the
 GNOME desktop environment and allow users to perform operations from
 applications like nautilus or gedit.
+
+%description -l pl.UTF-8
+Wtyczki i narzędzia z tego pakietu integrują Seahorse ze środowiskiem
+graficznym GNOME, pozwalając użytkownikom wykonywać operacje z
+aplikacji takich jak nautilus czy gedit.
 
 %package -n gedit-plugin-seahorse
 Summary:	Seahorse plugin for Gedit
@@ -81,7 +87,7 @@ Requires:	gnome-panel >= 2.26.0
 Applet for signing and encrypting files.
 
 %description -n gnome-applet-seahorse -l pl.UTF-8
-Aplet do podpisywania i kodowania plików.
+Aplet do podpisywania i szyfrowania plików.
 
 %prep
 %setup -q
