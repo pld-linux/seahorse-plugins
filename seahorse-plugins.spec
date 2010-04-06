@@ -12,6 +12,7 @@ BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.71
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	evolution-data-server-devel >= 2.26.0
 BuildRequires:	gedit2-devel >= 2.24.0
 BuildRequires:	gettext-devel
