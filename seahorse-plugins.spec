@@ -1,12 +1,12 @@
 Summary:	Plugins and utilities for encryption in GNOME
 Summary(pl.UTF-8):	Wtyczki i narzędzia do szyfrowania w GNOME
 Name:		seahorse-plugins
-Version:	2.28.1
+Version:	2.30.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	cec5ef8b94c16798f53a5876d3718b91
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.30/%{name}-%{version}.tar.bz2
+# Source0-md5:	cb8a86a1039054b621f6419ac2219695
 URL:		http://www.gnome.org/projects/seahorse/
 BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.52
@@ -17,14 +17,13 @@ BuildRequires:	evolution-data-server-devel >= 2.26.0
 BuildRequires:	gedit2-devel >= 2.24.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-doc-utils >= 0.14.0
-BuildRequires:	gnome-keyring-devel >= 2.26.0
 BuildRequires:	gnome-panel-devel >= 2.26.0
 BuildRequires:	gnupg >= 1.4.5
 BuildRequires:	gpgme-devel >= 1:1.1.2
-BuildRequires:	gtk+2-devel >= 2:2.14.0
+BuildRequires:	gtk+2-devel >= 2:2.18.0
 BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libcryptui-devel >= 2.28.0
-BuildRequires:	libglade2-devel >= 1:2.6.2
+BuildRequires:	libcryptui-devel >= 2.30.1
+BuildRequires:	libgnome-keyring-devel >= 2.26.0
 BuildRequires:	libnotify-devel >= 0.4.2
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
@@ -34,7 +33,7 @@ BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 Requires(post,postun):	desktop-file-utils
 Requires(post,preun):	GConf2
-Requires:	seahorse >= 2.28.0
+Requires:	seahorse >= 2.30.1
 Obsoletes:	epiphany-extension-seahorse
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -92,6 +91,9 @@ Aplet do podpisywania i szyfrowania plików.
 
 %prep
 %setup -q
+
+%{__sed} -i -e 's/en@shaw//' po/LINGUAS
+rm -f po/en@shaw.po
 
 %build
 %{__intltoolize}
@@ -183,7 +185,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/seahorse/seahorse-applet
 %{_libdir}/bonobo/servers/GNOME_SeahorseApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_SeahorseApplet.xml
-%{_datadir}/seahorse-plugins/glade/seahorse-applet-preferences.glade
 %{_iconsdir}/hicolor/*/*/seahorse-applet*
 %{_pixmapsdir}/seahorse-plugins/*/seahorse-applet*
 %{_pixmapsdir}/seahorse-applet.svg
