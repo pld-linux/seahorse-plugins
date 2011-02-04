@@ -2,7 +2,7 @@ Summary:	Plugins and utilities for encryption in GNOME
 Summary(pl.UTF-8):	Wtyczki i narzędzia do szyfrowania w GNOME
 Name:		seahorse-plugins
 Version:	2.30.1
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.30/%{name}-%{version}.tar.bz2
@@ -80,7 +80,8 @@ Rozszerzenie do podpisywania i szyfrowania plików.
 Summary:	Seahorse applet
 Summary(pl.UTF-8):	Aplet Seahorse
 Group:		X11/Applications
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
+Requires(post,postun):	hicolor-icon-theme
 Requires:	%{name} = %{version}-%{release}
 Requires:	gnome-panel >= 2.26.0
 
