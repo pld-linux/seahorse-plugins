@@ -1,0 +1,12 @@
+diff -up seahorse-plugins-2.30.1/libseahorse/seahorse-notification.c.notify seahorse-plugins-2.30.1/libseahorse/seahorse-notification.c
+--- seahorse-plugins-2.30.1/libseahorse/seahorse-notification.c.notify	2010-11-03 20:51:49.177241997 -0400
++++ seahorse-plugins-2.30.1/libseahorse/seahorse-notification.c	2010-11-03 20:52:28.906241997 -0400
+@@ -213,7 +213,7 @@ setup_libnotify_notification (SeahorseNo
+     heading = format_key_text (snotif->heading);
+     message = format_key_text (snotif->message);
+     
+-    notif = notify_notification_new (heading, message, snotif->icon, attachto);
++    notif = notify_notification_new (heading, message, snotif->icon);
+     
+     g_free (heading);
+     g_free (message);
