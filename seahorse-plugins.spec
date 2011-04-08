@@ -123,8 +123,7 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/epiphany/2.*/extensions/*.{a,la}
 rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.{a,la}
 rm -f $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-2.0/*.{a,la}
 
-%find_lang seahorse-applet --with-gnome --with-omf
-%find_lang %{name} --with-gnome --with-omf
+%find_lang %{name} --with-gnome --with-omf --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
