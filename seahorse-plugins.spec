@@ -2,12 +2,13 @@ Summary:	Plugins and utilities for encryption in GNOME
 Summary(pl.UTF-8):	Wtyczki i narzędzia do szyfrowania w GNOME
 Name:		seahorse-plugins
 Version:	2.30.1
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.30/%{name}-%{version}.tar.bz2
 # Source0-md5:	cb8a86a1039054b621f6419ac2219695
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-libnotify.patch
 URL:		http://www.gnome.org/projects/seahorse/
 BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf >= 2.52
@@ -25,7 +26,7 @@ BuildRequires:	gtk+2-devel >= 2:2.18.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libcryptui-devel >= 2.30.1
 BuildRequires:	libgnome-keyring-devel >= 2.26.0
-BuildRequires:	libnotify-devel >= 0.4.2
+BuildRequires:	libnotify-devel >= 0.7
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	nautilus-devel >= 2.26.0
@@ -94,6 +95,7 @@ Aplet do podpisywania i szyfrowania plików.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %{__sed} -i -e 's/en@shaw//' po/LINGUAS
 rm -f po/en@shaw.po
