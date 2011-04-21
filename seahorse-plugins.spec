@@ -1,5 +1,5 @@
 #
-# TODO: fix build nautilus-extension-seahorse and gedit-plugin-seahorse
+# TODO: fix build gedit-plugin-seahorse
 #
 Summary:	Plugins and utilities for encryption in GNOME
 Summary(pl.UTF-8):	Wtyczki i narzędzia do szyfrowania w GNOME
@@ -182,7 +182,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/nautilus/extensions-3.0/libnautilus-seahorse.so
 %{_datadir}/mime/packages/seahorse.xml
 
-%files -n gnome-applet-seahorse -f seahorse-applet.lang
+#%%files -n gnome-applet-seahorse -f seahorse-applet.lang
+%files -n gnome-applet-seahorse
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/seahorse/seahorse-applet
 %{_libdir}/bonobo/servers/GNOME_SeahorseApplet.server
