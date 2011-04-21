@@ -1,5 +1,6 @@
 #
-# TODO: fix build gedit-plugin-seahorse
+# TODO: - fix build gedit-plugin-seahorse
+#	- enable epiphany plugin?
 #
 Summary:	Plugins and utilities for encryption in GNOME
 Summary(pl.UTF-8):	Wtyczki i narzędzia do szyfrowania w GNOME
