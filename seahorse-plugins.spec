@@ -122,9 +122,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/epiphany/2.*/extensions/*.{a,la}
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.{a,la}
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-2.0/*.{a,la}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/epiphany/3.*/extensions/*.{a,la}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/gedit/plugins/*.{a,la}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-3.0/*.{a,la}
 
 %find_lang %{name} --with-gnome --with-omf --all-name
 
