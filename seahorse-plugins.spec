@@ -100,9 +100,6 @@ Aplet do podpisywania i szyfrowania plików.
 %patch0 -p1
 %patch1 -p1
 
-%{__sed} -i -e 's/en@shaw//' po/LINGUAS
-rm -f po/en@shaw.po
-
 %build
 %{__intltoolize}
 %{__libtoolize}
@@ -122,7 +119,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/epiphany/3.*/extensions/*.{a,la}
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/gedit/plugins/*.{a,la}
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-3.0/*.{a,la}
 
