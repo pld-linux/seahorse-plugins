@@ -18,14 +18,14 @@ BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.71
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	evolution-data-server-devel >= 2.26.0
+BuildRequires:	evolution-data-server-devel >= 3.0.0
 BuildRequires:	gedit2-devel >= 2.24.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gnome-panel-devel >= 2.26.0
 BuildRequires:	gnupg >= 1.4.5
 BuildRequires:	gpgme-devel >= 1:1.1.2
-BuildRequires:	gtk+2-devel >= 2:2.18.0
+BuildRequires:	gtk+2-devel >= 3.0.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libcryptui-devel >= 2.30.1
 BuildRequires:	libgnome-keyring-devel >= 2.26.0
@@ -122,9 +122,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/epiphany/2.*/extensions/*.{a,la}
-rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.{a,la}
-rm -f $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-2.0/*.{a,la}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/epiphany/2.*/extensions/*.{a,la}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.{a,la}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-2.0/*.{a,la}
 
 %find_lang %{name} --with-gnome --with-omf --all-name
 
@@ -178,13 +178,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n gedit-plugin-seahorse
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/gedit-2/plugins/libseahorse-pgp.so
-%{_libdir}/gedit-2/plugins/seahorse-pgp.gedit-plugin
-%{_sysconfdir}/gconf/schemas/seahorse-gedit.schemas
+#%%attr(755,root,root) %{_libdir}/gedit-2/plugins/libseahorse-pgp.so
+#%%{_libdir}/gedit-2/plugins/seahorse-pgp.gedit-plugin
+#%%{_sysconfdir}/gconf/schemas/seahorse-gedit.schemas
 
 %files -n nautilus-extension-seahorse
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/nautilus/extensions-2.0/libnautilus-seahorse.so
+%attr(755,root,root) %{_libdir}/nautilus/extensions-3.0/libnautilus-seahorse.so
 %{_datadir}/mime/packages/seahorse.xml
 
 %files -n gnome-applet-seahorse -f seahorse-applet.lang
