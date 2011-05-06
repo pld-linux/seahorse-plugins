@@ -6,7 +6,7 @@ Summary:	Plugins and utilities for encryption in GNOME
 Summary(pl.UTF-8):	Wtyczki i narzędzia do szyfrowania w GNOME
 Name:		seahorse-plugins
 Version:	2.30.1
-Release:	4
+Release:	0.4
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.30/%{name}-%{version}.tar.bz2
