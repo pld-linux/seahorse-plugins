@@ -6,7 +6,7 @@ Summary:	Plugins and utilities for encryption in GNOME
 Summary(pl.UTF-8):	Wtyczki i narzędzia do szyfrowania w GNOME
 Name:		seahorse-plugins
 Version:	2.30.1
-Release:	0.4
+Release:	0.5
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seahorse-plugins/2.30/%{name}-%{version}.tar.bz2
@@ -20,7 +20,7 @@ BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.71
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	evolution-data-server-devel >= 3.0.0
-BuildRequires:	gedit2-devel >= 2.24.0
+BuildRequires:	gedit-devel >= 2.24.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gnome-panel-devel >= 2.26.0
@@ -59,7 +59,7 @@ Summary(pl.UTF-8):	Wtyczka Seahorse dla Gedit
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{version}-%{release}
-Requires:	gedit2 >= 2.26.0
+Requires:	gedit >= 2.26.0
 
 %description -n gedit-plugin-seahorse
 This plugin performs encryption operations on text.
@@ -174,8 +174,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n gedit-plugin-seahorse
 %defattr(644,root,root,755)
-#%%attr(755,root,root) %{_libdir}/gedit-2/plugins/libseahorse-pgp.so
-#%%{_libdir}/gedit-2/plugins/seahorse-pgp.gedit-plugin
+#%%attr(755,root,root) %{_libdir}/gedit/plugins/libseahorse-pgp.so
+#%%{_libdir}/gedit/plugins/seahorse-pgp.gedit-plugin
 #%%{_sysconfdir}/gconf/schemas/seahorse-gedit.schemas
 
 %files -n nautilus-extension-seahorse
