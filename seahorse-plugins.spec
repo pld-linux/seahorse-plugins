@@ -21,7 +21,7 @@ BuildRequires:	dbus-glib-devel >= 0.71
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	evolution-data-server-devel >= 3.0.0
 BuildRequires:	gedit-devel >= 2.24.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gnome-panel-devel >= 2.26.0
 BuildRequires:	gnupg >= 1.4.5
